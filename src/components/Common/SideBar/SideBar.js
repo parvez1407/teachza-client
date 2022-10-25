@@ -17,7 +17,7 @@ const SideBar = () => {
             <h2 className='text-center text-success mb-4 mt-3'>Our Courses</h2>
             {
                 courses.map(category => <p
-                    className='w-100 p-3 category-hover'
+                    className='w-100 p-3 category-hover shadow-sm'
                     key={category.id}
                 ><Link className='text-decoration-none text-white' to={`/category/${category.id}`}>{category.name}</Link></p>)
             }

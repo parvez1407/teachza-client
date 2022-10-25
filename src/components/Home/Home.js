@@ -14,9 +14,9 @@ import {
 const Home = () => {
     const courses = useLoaderData();
     return (
-        <div>
-            <h2 className='text-success text-center mt-4 fw-bold'>Our Courses at a Glance</h2>
-            <MDBRow style={{ rowGap: 15 }}>
+        <div className='mb-5'>
+            <h2 className='text-success text-center mt-4 mb-4 fw-bold'>Our Courses at a Glance</h2>
+            <MDBRow style={{ rowGap: 20 }}>
                 {
                     courses.map(course => <CourseSummary
                         key={course._id}
