@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import './SideBar.css';
 
 const SideBar = () => {
     const [courses, setCourses] = useState([]);
@@ -16,7 +17,7 @@ const SideBar = () => {
             <h2 className='text-center text-success mb-4 mt-3'>Our Courses</h2>
             {
                 courses.map(category => <p
-                    className='bg-success w-100 p-3'
+                    className='w-100 p-3 category-hover'
                     key={category.id}
                 ><Link className='text-decoration-none text-white' to={`/category/${category.id}`}>{category.name}</Link></p>)
             }
