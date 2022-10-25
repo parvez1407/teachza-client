@@ -2,12 +2,12 @@
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDX75EybreAAgY2MFkZloKdsS03wNobcjA",
-    authDomain: "teachza-e0177.firebaseapp.com",
-    projectId: "teachza-e0177",
-    storageBucket: "teachza-e0177.appspot.com",
-    messagingSenderId: "197860222611",
-    appId: "1:197860222611:web:43f9cc917260ff4cdd0f66"
+    apiKey: process.env.REACT_APP_apiKey,
+    authDomain: process.env.REACT_APP_authDomain,
+    projectId: process.env.REACT_APP_projectId,
+    storageBucket: process.env.REACT_APP_storageBucket,
+    messagingSenderId: process.env.REACT_APP_messagingSenderId,
+    appId: process.env.REACT_APP_appId,
 };
 
 const app = initializeApp(firebaseConfig);
