@@ -10,14 +10,7 @@ const Main = () => {
         <div>
             <Header></Header>
             <Container>
-                <Row>
-                    <Col lg='3' className='d-none d-lg-block'>
-                        <SideBar></SideBar>
-                    </Col>
-                    <Col lg='9'>
-                        <Outlet></Outlet>
-                    </Col>
-                </Row>
+                <Outlet></Outlet>
             </Container>
             <Footer></Footer>
 

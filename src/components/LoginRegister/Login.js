@@ -19,19 +19,19 @@ const Login = () => {
             <MDBRow>
 
                 <MDBCol col='10' md='6'>
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg" class="img-fluid" alt="Phone image" />
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg" className="img-fluid" alt="Phone image" />
                 </MDBCol>
 
                 <MDBCol col='4' md='6'>
 
 
                     <Form>
-                        <MDBInput wrapperClass='mb-4' label='Email address' id='formControlLg' type='email' size="lg" placeholder='Enter your email' />
-                        <MDBInput wrapperClass='mb-4' label='Password' id='formControlLg' type='password' size="lg" placeholder='Enter your password' />
+                        <MDBInput wrapperClass='mb-4 text-white' label='Email address' id='formControlLg1' type='email' size="lg" placeholder='Enter your email' />
+                        <MDBInput wrapperClass='mb-4 text-white' label='Password' id='formControlLg2' type='password' size="lg" placeholder='Enter your password' />
 
 
-                        <div className="d-flex justify-content-between mx-4 mb-4">
-                            <button style={{ border: 0, backgroundColor: '#fff', color: 'green' }}>
+                        <div className="d-flex justify-content-between mb-4">
+                            <button style={{ border: 0, backgroundColor: '#000', color: 'green' }}>
                                 Forgot password?
                             </button>
                         </div>
