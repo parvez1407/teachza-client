@@ -10,6 +10,7 @@ import Courses from "../components/Courses/Courses";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
 import CheckOut from "../components/CheckOut/CheckOut";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import FAQ from "../components/FAQ/FAQ";
 
 
 export const router = createBrowserRouter([
@@ -49,6 +50,10 @@ export const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/faq',
+                element: <FAQ></FAQ>
             },
             {
                 path: '/blog',

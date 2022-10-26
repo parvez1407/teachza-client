@@ -108,10 +108,10 @@ const Register = () => {
                     <h1 className='text-center text-success mb-4'>Please Register Here</h1>
                     {/* <p className='text-center text-white'>{error}</p> */}
                     <Form onSubmit={handleSubmit}>
-                        <MDBInput wrapperClass='mb-4 text-white' name='name' label='Name' id='formControlLg1' type='text' size="lg" placeholder='Enter your name' />
-                        <MDBInput wrapperClass='mb-4 text-white' name='photoURL' label='Photo URL' id='formControlLg2' type='text' size="lg" placeholder='photo URL' />
-                        <MDBInput wrapperClass='mb-4 text-white' name='email' label='Email address' id='formControlLg3' type='email' size="lg" placeholder='Enter your email' />
-                        <MDBInput wrapperClass='mb-4 text-white' name='password' label='Password' id='formControlLg4' type='password' size="lg" placeholder='Enter your password' />
+                        <MDBInput wrapperClass='mb-4 text-white' name='name' label='Full Name' id='formControlLg1' type='text' size="lg" placeholder='Enter your full-name' required />
+                        <MDBInput wrapperClass='mb-4 text-white' name='photoURL' label='Photo URL' id='formControlLg2' type='text' size="lg" placeholder='photo URL' required />
+                        <MDBInput wrapperClass='mb-4 text-white' name='email' label='Email address' id='formControlLg3' type='email' size="lg" placeholder='Enter your email' required />
+                        <MDBInput wrapperClass='mb-4 text-white' name='password' label='Password' id='formControlLg4' type='password' size="lg" placeholder='Enter your password' required />
 
                         <button type='submit' color='success' className="mb-4 w-100 bg-success rounded-2 p-2 text-white" size="lg">Register</button>
                     </Form>

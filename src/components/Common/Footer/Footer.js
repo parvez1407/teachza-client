@@ -4,7 +4,7 @@ import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon, MDBBtn, MDBInput } fr
 const Footer = () => {
     return (
         <MDBFooter bgColor='dark' className='text-center text-white text-lg-left mt-5 bg-dark'>
-            <MDBContainer className='p-4 pb-0'>
+            <MDBContainer className='p-4 pb-0 '>
                 <form action=''>
                     <MDBRow className='d-flex justify-content-center p-5'>
                         <MDBCol size='auto' className='mb-4 mb-md-0'>
