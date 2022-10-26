@@ -23,8 +23,7 @@ const Login = () => {
                 </MDBCol>
 
                 <MDBCol col='4' md='6'>
-
-
+                    <h1 className='text-center text-success mb-4'>Please Login</h1>
                     <Form>
                         <MDBInput wrapperClass='mb-4 text-white' label='Email address' id='formControlLg1' type='email' size="lg" placeholder='Enter your email' />
                         <MDBInput wrapperClass='mb-4 text-white' label='Password' id='formControlLg2' type='password' size="lg" placeholder='Enter your password' />
@@ -40,21 +39,21 @@ const Login = () => {
                     </Form>
 
                     <div className="divider mb-3">
-                        <p className="text-center fw-bold mx-3 mb-0">Don't Have an Account? <Link to='/register'>Register</Link></p>
+                        <p className="text-center text-white fw-bold mx-3 mb-0">Don't Have an Account? <Link to='/register'>Register</Link></p>
                     </div>
                     <div className="divider mb-3">
                         <p className="text-center fw-bold mx-3 mb-0">OR</p>
                     </div>
 
-                    <MDBBtn className="mb-4 w-100" size="lg" style={{ backgroundColor: '#3b5998', border: 0 }}>
+                    <button className="mb-4 w-100 rounded-2 p-2 text-white" size="lg" style={{ backgroundColor: '#3b5998', border: 0 }}>
                         <MDBIcon fab icon="google" className="mx-2" />
-                        Sign In With Google
-                    </MDBBtn>
+                        Login With Google
+                    </button>
 
-                    <MDBBtn className="mb-4 w-100" size="lg" style={{ backgroundColor: '#808080', border: 0 }}>
+                    <button className="mb-4 w-100 bg-gray rounded-2 p-2 text-white" size="lg" style={{ backgroundColor: '#808080', border: 0 }}>
                         <MDBIcon fab icon="github" className="mx-2" />
-                        Sign In with Github
-                    </MDBBtn>
+                        Login with Github
+                    </button>
 
                 </MDBCol>
 

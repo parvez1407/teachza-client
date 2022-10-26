@@ -20,7 +20,7 @@ const Category = () => {
         <div>
             <Container>
                 <Row>
-                    <Col lg='3' className='d-none d-lg-block'>
+                    <Col lg='3'>
                         <SideBar></SideBar>
                     </Col>
                     <Col lg='9'>

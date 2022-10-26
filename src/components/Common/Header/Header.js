@@ -21,9 +21,6 @@ const Header = () => {
                             <Link className='text-decoration-none text-white me-4' to='/blog'>Blog</Link>
                             <Link className='text-decoration-none text-white' to='/login'>Login</Link>
                         </Nav>
-                        <div className='d-block d-lg-none'>
-                            <SideBar></SideBar>
-                        </div>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
