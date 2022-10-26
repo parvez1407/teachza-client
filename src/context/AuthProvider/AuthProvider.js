@@ -16,6 +16,7 @@ const AuthProvider = ({ children }) => {
 
     // register user with email % password
     const createUser = (email, password) => {
+        setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
     // user profile update
@@ -28,20 +29,24 @@ const AuthProvider = ({ children }) => {
     }
     // login with email & password
     const signIn = (email, password) => {
+        setLoading(true)
         return signInWithEmailAndPassword(auth, email, password);
     }
 
     // sign in with google
     const googleProviderLogin = () => {
+        setLoading(true)
         return signInWithPopup(auth, googleProvider);
     }
     // sign in with github
     const githubProviderLogin = () => {
+        setLoading(true)
         return signInWithPopup(auth, githubProvider);
     }
 
     // sign out
     const logOut = () => {
+        setLoading(true)
         return signOut(auth)
     }
 

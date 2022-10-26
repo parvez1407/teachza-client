@@ -1,4 +1,5 @@
 import React from 'react';
+import Pdf from "react-to-pdf";
 import { Link, useLoaderData } from 'react-router-dom';
 import { FaFileDownload } from 'react-icons/fa';
 import {
@@ -6,22 +7,29 @@ import {
     MDBCardHeader,
     MDBCardBody,
     MDBCardTitle,
-    MDBCardText,
-    MDBBtn
+    MDBCardText
 } from 'mdb-react-ui-kit';
+const ref = React.createRef();
+const options = {
+    orientation: 'landscape',
+    unit: 'in',
+    format: [14, 10]
+};
 
 const CourseDetails = () => {
     const courseDetails = useLoaderData();
     const { title, image_url, details, advisor, total_seat, _id } = courseDetails;
     return (
         <div>
-            <div>
-
-            </div>
-            <MDBCard>
+            <MDBCard ref={ref}>
                 <MDBCardHeader className='d-flex justify-content-between'>
                     <h3 className='text-success'>{title}</h3>
-                    <button className='border-0'><FaFileDownload className='fs-3 text-success' /></button>
+                    <>
+                        <Pdf targetRef={ref} filename="code-example.pdf" options={options}>
+                            {({ toPdf }) => <button onClick={toPdf} className='border-0 fw-bold'>Download<FaFileDownload className='fs-3 text-success' /></button>}
+                        </Pdf>
+                    </>
+
                 </MDBCardHeader>
                 <MDBCardBody>
                     <img className='w-100 rounded-1' src={image_url} alt="" />

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import { useContext } from 'react';
 import { Image } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
@@ -13,6 +14,7 @@ import teachza from '../../../teachza.png';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
+    const [navColor, setNavColor] = useState(false);
     console.log(user);
     const handleLogOut = () => {
         logOut()
@@ -24,9 +26,13 @@ const Header = () => {
                 toast.error(errorMessage)
             })
     }
+
+    const handleToggleButton = () => {
+        setNavColor(!navColor)
+    }
     return (
         <div>
-            <Navbar collapseOnSelect className='mb-4' expand="lg" bg="success" variant="dark">
+            <Navbar collapseOnSelect className='mb-4' expand="lg" bg={`${(navColor === true) ? 'dark' : 'success'}`} variant="dark">
                 <Container>
                     <Navbar.Brand><Link to='/' className='text-decoration-none text-white fs-4'><img title='TEACHZA' src={teachza} alt="" /> TEACHZA</Link></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -55,6 +61,7 @@ const Header = () => {
                                     <Link className='text-decoration-none text-white' to='/login'>Login</Link>
                                 }
                             </>
+                            <button onClick={handleToggleButton} className='border-0 rounded-2 ms-4 bg-white p-1'>Toggle Color</button>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
