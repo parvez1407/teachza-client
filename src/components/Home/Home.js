@@ -15,7 +15,7 @@ const Home = () => {
                         alt="First slide"
                     />
                     <Carousel.Caption>
-                        <h2 className='fw-bolder'>Welcome to TEACHZA</h2>
+                        <h2 className='fw-bolder fs-1'>Welcome to TEACHZA</h2>
                         <p>Our online courses provide you with an affordable and flexible way to learn new skills and study new and emerging topics.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -27,7 +27,7 @@ const Home = () => {
                     />
 
                     <Carousel.Caption>
-                        <h2 className='fw-bolder'>Welcome to TEACHZA</h2>
+                        <h2 className='fw-bolder fs-1'>Welcome to TEACHZA</h2>
                         <p>Our online courses provide you with an affordable and flexible way to learn new skills and study new and emerging topics.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -39,7 +39,7 @@ const Home = () => {
                     />
 
                     <Carousel.Caption>
-                        <h2 className='fw-bolder'>Welcome to TEACHZA</h2>
+                        <h2 className='fw-bolder fs-1'>Welcome to TEACHZA</h2>
                         <p>Our online courses provide you with an affordable and flexible way to learn new skills and study new and emerging topics.</p>
                     </Carousel.Caption>
                 </Carousel.Item>

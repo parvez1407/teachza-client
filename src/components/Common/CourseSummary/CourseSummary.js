@@ -29,7 +29,7 @@ const CourseSummary = ({ course }) => {
                         }
                     </MDBCardText>
                     <p className='mt-3 mb-3 text-danger'>Course Duration: {advisor?.course_duration}</p>
-                    <MDBBtn color='success'><Link className='text-decoration-none text-white' to={`/courses/${_id}`}>ShowDetails</Link></MDBBtn>
+                    <button color='success' className='mb-4 w-100 bg-success rounded-2 p-2 text-white border-0'><Link className='text-decoration-none text-white' to={`/courses/${_id}`}>ShowDetails</Link></button>
                 </MDBCardBody>
             </MDBCard>
         </MDBCol>

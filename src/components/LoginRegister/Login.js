@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Form, Link } from 'react-router-dom';
 import {
     MDBContainer,
@@ -7,12 +7,68 @@ import {
     MDBBtn,
     MDBIcon,
     MDBInput,
-    MDBCheckbox
 }
     from 'mdb-react-ui-kit';
+import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import toast from 'react-hot-toast';
 
 
 const Login = () => {
+
+    const { googleProviderLogin, githubProviderLogin, signIn } = useContext(AuthContext);
+
+    // Sign in with email & password
+    const handleLogIn = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password);
+
+        signIn(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                form.reset();
+                toast.success('Successfully Login')
+            })
+            .catch((error) => {
+                console.error(error)
+                const errorMessage = error.message;
+                toast.error(errorMessage)
+            })
+    }
+
+    // sign in with google
+    const handleGoogleSignIn = () => {
+        googleProviderLogin()
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                toast.success('successfully login')
+            })
+            .catch(error => {
+                console.error(error)
+                const errorMessage = error.message;
+                toast.error(errorMessage);
+            })
+
+    }
+
+    // Sign in with github
+    const handleGithubSignIn = () => {
+        githubProviderLogin()
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                toast.success('successfully login')
+            })
+            .catch(error => {
+                console.error(error)
+                const errorMessage = error.message;
+                toast.error(errorMessage);
+            })
+    }
     return (
         <MDBContainer fluid className="p-3 my-5">
 
@@ -24,7 +80,7 @@ const Login = () => {
 
                 <MDBCol col='4' md='6'>
                     <h1 className='text-center text-success mb-4'>Please Login</h1>
-                    <Form>
+                    <Form onSubmit={handleLogIn}>
                         <MDBInput wrapperClass='mb-4 text-white' name='email' label='Email address' id='formControlLg1' type='email' size="lg" placeholder='Enter your email' />
                         <MDBInput wrapperClass='mb-4 text-white' name='password' label='Password' id='formControlLg2' type='password' size="lg" placeholder='Enter your password' />
 
@@ -35,7 +91,7 @@ const Login = () => {
                             </button>
                         </div>
 
-                        <MDBBtn color='success' className="mb-4 w-100" size="lg">Sign in</MDBBtn>
+                        <button color='success' className="mb-4 w-100 bg-success rounded-2 p-2 text-white" size="lg">Login</button>
                     </Form>
 
                     <div className="divider mb-3">
@@ -45,12 +101,12 @@ const Login = () => {
                         <p className="text-center fw-bold mx-3 mb-0">OR</p>
                     </div>
 
-                    <button className="mb-4 w-100 rounded-2 p-2 text-white" size="lg" style={{ backgroundColor: '#3b5998', border: 0 }}>
+                    <button onClick={handleGoogleSignIn} className="mb-4 w-100 rounded-2 p-2 text-white" size="lg" style={{ backgroundColor: '#3b5998', border: 0 }}>
                         <MDBIcon fab icon="google" className="mx-2" />
                         Login With Google
                     </button>
 
-                    <button className="mb-4 w-100 bg-gray rounded-2 p-2 text-white" size="lg" style={{ backgroundColor: '#808080', border: 0 }}>
+                    <button onClick={handleGithubSignIn} className="mb-4 w-100 bg-gray rounded-2 p-2 text-white" size="lg" style={{ backgroundColor: '#808080', border: 0 }}>
                         <MDBIcon fab icon="github" className="mx-2" />
                         Login with Github
                     </button>

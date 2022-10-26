@@ -1,5 +1,6 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
+import { FaFileDownload } from 'react-icons/fa';
 import {
     MDBCard,
     MDBCardHeader,
@@ -11,11 +12,17 @@ import {
 
 const CourseDetails = () => {
     const courseDetails = useLoaderData();
-    const { title, image_url, details, advisor, total_seat } = courseDetails;
+    const { title, image_url, details, advisor, total_seat, _id } = courseDetails;
     return (
         <div>
+            <div>
+
+            </div>
             <MDBCard>
-                <MDBCardHeader><h3 className='text-success'>{title}</h3></MDBCardHeader>
+                <MDBCardHeader className='d-flex justify-content-between'>
+                    <h3 className='text-success'>{title}</h3>
+                    <button className='border-0'><FaFileDownload className='fs-3 text-success' /></button>
+                </MDBCardHeader>
                 <MDBCardBody>
                     <img className='w-100 rounded-1' src={image_url} alt="" />
                     <div className='d-flex justify-content-between'>
@@ -26,7 +33,7 @@ const CourseDetails = () => {
                         </div>
                     </div>
                     <MDBCardText>{details}</MDBCardText>
-                    <MDBBtn href='#'>Go somewhere</MDBBtn>
+                    <button href='#' className='mb-4 bg-success rounded-2 p-2 text-white border-0'><Link className='text-decoration-none text-white' to={`/premium/${_id}`}>Get Premium Access</Link></button>
                 </MDBCardBody>
             </MDBCard>
         </div>

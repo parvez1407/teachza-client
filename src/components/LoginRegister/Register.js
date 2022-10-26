@@ -14,11 +14,9 @@ import { useContext } from 'react';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
-import { GoogleAuthProvider } from 'firebase/auth';
 
 const Register = () => {
-    const { createUser, updateUserProfile, verifyEmail, providerLogin } = useContext(AuthContext);
-    const googleProvider = new GoogleAuthProvider;
+    const { createUser, updateUserProfile, verifyEmail, googleProviderLogin, githubProviderLogin } = useContext(AuthContext);
     const [error, setError] = useState();
 
     const handleSubmit = e => {
@@ -65,7 +63,7 @@ const Register = () => {
 
     // sign in with google
     const handleGoogleSignIn = () => {
-        providerLogin(googleProvider)
+        googleProviderLogin()
             .then(result => {
                 const user = result.user;
                 console.log(user);
@@ -80,6 +78,20 @@ const Register = () => {
     }
 
 
+    // Sign in with github
+    const handleGithubSignIn = () => {
+        githubProviderLogin()
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                toast.success('successfully login')
+            })
+            .catch(error => {
+                console.error(error)
+                const errorMessage = error.message;
+                toast.error(errorMessage);
+            })
+    }
 
     return (
         <MDBContainer fluid className="p-3 my-3">
@@ -103,7 +115,7 @@ const Register = () => {
                     </Form>
 
                     <div className="divider mb-3">
-                        <p className="text-center text-white fw-bold mx-3 mb-0">Already Have an Account? <Link to='/login'>SignIn</Link></p>
+                        <p className="text-center text-white fw-bold mx-3 mb-0">Already Have an Account? <Link to='/login'>Login</Link></p>
                     </div>
                     <div className="divider mb-3">
                         <p className="text-center fw-bold mx-3 mb-0">OR</p>
@@ -114,7 +126,7 @@ const Register = () => {
                         Sign In With Google
                     </button>
 
-                    <button className="mb-4 w-100 rounded-2 p-2 text-white" size="lg" style={{ backgroundColor: '#808080', border: 0 }}>
+                    <button onClick={handleGithubSignIn} className="mb-4 w-100 rounded-2 p-2 text-white" size="lg" style={{ backgroundColor: '#808080', border: 0 }}>
                         <MDBIcon fab icon="github" className="mx-2" />
                         Sign In with Github
                     </button>
