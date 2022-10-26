@@ -12,7 +12,7 @@ const Header = () => {
         <div>
             <Navbar collapseOnSelect className='mb-4' expand="lg" bg="success" variant="dark">
                 <Container>
-                    <Navbar.Brand><Link to='/' className='text-decoration-none text-white'><img src={teachza} alt="" /> TEACHZA</Link></Navbar.Brand>
+                    <Navbar.Brand><Link to='/' className='text-decoration-none text-white'><img title='TEACHZA' src={teachza} alt="" /> TEACHZA</Link></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="ms-auto">

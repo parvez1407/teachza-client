@@ -14,9 +14,11 @@ import { useContext } from 'react';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
+import { GoogleAuthProvider } from 'firebase/auth';
 
 const Register = () => {
-    const { createUser, updateUserProfile } = useContext(AuthContext);
+    const { createUser, updateUserProfile, verifyEmail, providerLogin } = useContext(AuthContext);
+    const googleProvider = new GoogleAuthProvider;
     const [error, setError] = useState();
 
     const handleSubmit = e => {
@@ -34,7 +36,8 @@ const Register = () => {
                 console.log(user);
                 form.reset();
                 handleUpdateUserProfile(name, photoURL)
-                toast.success('user Created Successfully')
+                handleEmailVerification()
+                toast.success('user Created Successfully!!! Check your email, and verify before login...')
             })
             .catch(error => {
                 const errorMessage = error.message;
@@ -43,7 +46,7 @@ const Register = () => {
             })
     }
 
-
+    // user profile update 
     const handleUpdateUserProfile = (name, photoURL) => {
         const profile = {
             displayName: name,
@@ -53,6 +56,29 @@ const Register = () => {
             .then(() => { })
             .catch(error => console.error(error))
     }
+    // verification email
+    const handleEmailVerification = () => {
+        verifyEmail()
+            .then(() => { })
+            .catch(error => console.error(error))
+    }
+
+    // sign in with google
+    const handleGoogleSignIn = () => {
+        providerLogin(googleProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                toast.success('successfully login')
+            })
+            .catch(error => {
+                console.error(error)
+                const errorMessage = error.message;
+                toast.error(errorMessage);
+            })
+
+    }
+
 
 
     return (
@@ -83,7 +109,7 @@ const Register = () => {
                         <p className="text-center fw-bold mx-3 mb-0">OR</p>
                     </div>
 
-                    <button className="mb-4 w-100 rounded-2 p-2 text-white" size="lg" style={{ backgroundColor: '#3b5998', border: 0 }}>
+                    <button onClick={handleGoogleSignIn} className="mb-4 w-100 rounded-2 p-2 text-white" size="lg" style={{ backgroundColor: '#3b5998', border: 0 }}>
                         <MDBIcon fab icon="google" className="mx-2" />
                         Sign In With Google
                     </button>

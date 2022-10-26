@@ -25,8 +25,8 @@ const Login = () => {
                 <MDBCol col='4' md='6'>
                     <h1 className='text-center text-success mb-4'>Please Login</h1>
                     <Form>
-                        <MDBInput wrapperClass='mb-4 text-white' label='Email address' id='formControlLg1' type='email' size="lg" placeholder='Enter your email' />
-                        <MDBInput wrapperClass='mb-4 text-white' label='Password' id='formControlLg2' type='password' size="lg" placeholder='Enter your password' />
+                        <MDBInput wrapperClass='mb-4 text-white' name='email' label='Email address' id='formControlLg1' type='email' size="lg" placeholder='Enter your email' />
+                        <MDBInput wrapperClass='mb-4 text-white' name='password' label='Password' id='formControlLg2' type='password' size="lg" placeholder='Enter your password' />
 
 
                         <div className="d-flex justify-content-between mb-4">
