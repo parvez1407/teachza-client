@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+# TEACHZA
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Features
 
-## Available Scripts
+1. It's an online education platform.
+2. The home page contains general information about the website.
+3. The course page contains variety of courses, where students can easily access those courses. It also contains details about the courses. In addition to that there is Pdf option to download the course details.
+4. In the FAQ section students can find frequently asked questions related to the courses.
+5. In the Blog Section there are some questions and answers related to cors, firebase, node.js, private router.
+6. User can register or login in the login and register sections.
+7. There is a option in the course detail named "Get Premium Access", existing user can avail that option.
+8. Visitor can toggle the navbar by clicking toggle color option.
 
-In the project directory, you can run:
+This Projects was created with the help of react-bootstrap, bootstrap, react-mdb, react-js, react router, react icons, firebase, react pdf, react hot toast, font-awesome.
 
-### `npm start`
+## Live Link
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Hosted in Firebase ->[Live Link](https://teachza-e0177.web.app/)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Context API
 
-### `npm test`
+[Api Link](https://teachza-server-parvez1407.vercel.app/courses)
+[Api Link](https://teachza-server-parvez1407.vercel.app/category/${id})
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Resources & Credits
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[react-bootstrap](https://react-bootstrap.github.io/)
+[react-mdb](https://mdbootstrap.com/docs/react/getting-started/installation/)
+[react router](https://reactrouter.com/en/main)
+[react icons](https://react-icons.github.io/react-icons/)
+[firebase](https://console.firebase.google.com/u/0/)
+[react pdf](https://www.npmjs.com/package/react-pdf)
+[react hot toast](https://react-hot-toast.com/)

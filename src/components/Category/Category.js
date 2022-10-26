@@ -2,13 +2,7 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import CourseSummary from '../Common/CourseSummary/CourseSummary';
 import {
-    MDBCard,
-    MDBCardBody,
-    MDBCardTitle,
-    MDBCardText,
     MDBRow,
-    MDBCol,
-    MDBBtn
 } from 'mdb-react-ui-kit';
 import { Col, Container, Row } from 'react-bootstrap';
 import SideBar from '../Common/SideBar/SideBar';

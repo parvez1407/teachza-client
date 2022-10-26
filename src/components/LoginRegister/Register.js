@@ -1,23 +1,22 @@
 import React from 'react';
-import { Form, Link, useNavigate } from 'react-router-dom';
+import { Form, Link, useLocation, useNavigate } from 'react-router-dom';
 import {
     MDBContainer,
     MDBCol,
     MDBRow,
-    MDBBtn,
     MDBIcon,
     MDBInput,
-    MDBCheckbox
 }
     from 'mdb-react-ui-kit';
 import { useContext } from 'react';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
-import { useState } from 'react';
 import toast from 'react-hot-toast';
 
 const Register = () => {
     const { createUser, updateUserProfile, verifyEmail, googleProviderLogin, githubProviderLogin } = useContext(AuthContext);
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location?.state?.from?.pathname || '/'
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -68,7 +67,7 @@ const Register = () => {
                 const user = result.user;
                 console.log(user);
                 toast.success('successfully login')
-                navigate('/courses')
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 console.error(error)
@@ -86,7 +85,7 @@ const Register = () => {
                 const user = result.user;
                 console.log(user);
                 toast.success('successfully login')
-                navigate('/courses')
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 console.error(error)

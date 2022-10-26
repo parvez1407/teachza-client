@@ -4,9 +4,7 @@ import {
     MDBCardBody,
     MDBCardTitle,
     MDBCardText,
-    MDBRow,
     MDBCol,
-    MDBBtn
 } from 'mdb-react-ui-kit';
 import { Link } from 'react-router-dom';
 
