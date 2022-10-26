@@ -28,7 +28,7 @@ const Header = () => {
         <div>
             <Navbar collapseOnSelect className='mb-4' expand="lg" bg="success" variant="dark">
                 <Container>
-                    <Navbar.Brand><Link to='/' className='text-decoration-none text-white'><img title='TEACHZA' src={teachza} alt="" /> TEACHZA</Link></Navbar.Brand>
+                    <Navbar.Brand><Link to='/' className='text-decoration-none text-white fs-4'><img title='TEACHZA' src={teachza} alt="" /> TEACHZA</Link></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="ms-auto">
@@ -38,7 +38,7 @@ const Header = () => {
                             <>
                                 {user?.uid ?
                                     <>
-                                        <Link><button onClick={handleLogOut} className='border-0 text-white ms-1 bg-transparent'>logout</button></Link>
+                                        <Link to='/'><button onClick={handleLogOut} className='border-0 text-white ms-1 bg-transparent'>logout</button></Link>
                                         <>
                                             {user?.photoURL ?
                                                 <Image

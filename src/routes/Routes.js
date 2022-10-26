@@ -8,6 +8,8 @@ import Main from "../layout/Main/Main";
 import CourseDetails from "../components/CourseDetails/CourseDetails"
 import Courses from "../components/Courses/Courses";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
+import CheckOut from "../components/CheckOut/CheckOut";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 
 export const router = createBrowserRouter([
@@ -33,6 +35,11 @@ export const router = createBrowserRouter([
             {
                 path: '/courses/:id',
                 element: <CourseDetails></CourseDetails>,
+                loader: ({ params }) => fetch(`https://teachza-server-parvez1407.vercel.app/courses/${params.id}`)
+            },
+            {
+                path: '/premium/:id',
+                element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
                 loader: ({ params }) => fetch(`https://teachza-server-parvez1407.vercel.app/courses/${params.id}`)
             },
             {

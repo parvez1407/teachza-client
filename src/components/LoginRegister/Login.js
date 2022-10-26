@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Form, Link } from 'react-router-dom';
+import { Form, Link, useLocation, useNavigate } from 'react-router-dom';
 import {
     MDBContainer,
     MDBCol,
@@ -14,8 +14,11 @@ import toast from 'react-hot-toast';
 
 
 const Login = () => {
-
-    const { googleProviderLogin, githubProviderLogin, signIn } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location?.state?.from?.pathname || '/'
+    const { googleProviderLogin, githubProviderLogin, signIn, resetPassword } = useContext(AuthContext);
+    const [userEmail, setUserEmail] = useState('')
 
     // Sign in with email & password
     const handleLogIn = (e) => {
@@ -31,6 +34,7 @@ const Login = () => {
                 console.log(user);
                 form.reset();
                 toast.success('Successfully Login')
+                navigate(from, { replace: true })
             })
             .catch((error) => {
                 console.error(error)
@@ -46,6 +50,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 toast.success('successfully login')
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 console.error(error)
@@ -62,6 +67,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 toast.success('successfully login')
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 console.error(error)
@@ -69,6 +75,17 @@ const Login = () => {
                 toast.error(errorMessage);
             })
     }
+
+    // reset password
+    const handleResetPassword = () => {
+        resetPassword(userEmail)
+            .then(() => {
+                toast.success('Reset link has been sent, please check email & Reset Password')
+            })
+            .catch(error => toast.error(error.message))
+    }
+
+
     return (
         <MDBContainer fluid className="p-3 my-5">
 
@@ -81,12 +98,12 @@ const Login = () => {
                 <MDBCol col='4' md='6'>
                     <h1 className='text-center text-success mb-4'>Please Login</h1>
                     <Form onSubmit={handleLogIn}>
-                        <MDBInput wrapperClass='mb-4 text-white' name='email' label='Email address' id='formControlLg1' type='email' size="lg" placeholder='Enter your email' />
+                        <MDBInput onBlur={event => setUserEmail(event.target.value)} wrapperClass='mb-4 text-white' name='email' label='Email address' id='formControlLg1' type='email' size="lg" placeholder='Enter your email' />
                         <MDBInput wrapperClass='mb-4 text-white' name='password' label='Password' id='formControlLg2' type='password' size="lg" placeholder='Enter your password' />
 
 
                         <div className="d-flex justify-content-between mb-4">
-                            <button style={{ border: 0, backgroundColor: '#000', color: 'green' }}>
+                            <button onClick={handleResetPassword} style={{ border: 0, backgroundColor: '#000', color: 'green' }}>
                                 Forgot password?
                             </button>
                         </div>

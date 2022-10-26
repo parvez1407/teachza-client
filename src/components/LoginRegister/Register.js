@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Link } from 'react-router-dom';
+import { Form, Link, useNavigate } from 'react-router-dom';
 import {
     MDBContainer,
     MDBCol,
@@ -17,7 +17,7 @@ import toast from 'react-hot-toast';
 
 const Register = () => {
     const { createUser, updateUserProfile, verifyEmail, googleProviderLogin, githubProviderLogin } = useContext(AuthContext);
-    const [error, setError] = useState();
+    const navigate = useNavigate();
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -68,6 +68,7 @@ const Register = () => {
                 const user = result.user;
                 console.log(user);
                 toast.success('successfully login')
+                navigate('/courses')
             })
             .catch(error => {
                 console.error(error)
@@ -85,6 +86,7 @@ const Register = () => {
                 const user = result.user;
                 console.log(user);
                 toast.success('successfully login')
+                navigate('/courses')
             })
             .catch(error => {
                 console.error(error)
