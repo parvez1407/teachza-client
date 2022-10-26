@@ -17,22 +17,21 @@ export const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/courses')
             },
             {
                 path: '/courses',
                 element: <Courses></Courses>,
-                loader: () => fetch('http://localhost:5000/courses')
+                loader: () => fetch('https://teachza-server-parvez1407.vercel.app/courses')
             },
             {
                 path: '/category/:id',
                 element: <Category></Category>,
-                loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`)
+                loader: ({ params }) => fetch(`https://teachza-server-parvez1407.vercel.app/category/${params.id}`)
             },
             {
                 path: '/courses/:id',
                 element: <CourseDetails></CourseDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
+                loader: ({ params }) => fetch(`https://teachza-server-parvez1407.vercel.app/courses/${params.id}`)
             },
             {
                 path: '/login',
