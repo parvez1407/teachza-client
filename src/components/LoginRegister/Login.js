@@ -56,7 +56,6 @@ const Login = () => {
                 const errorMessage = error.message;
                 toast.error(errorMessage);
             })
-
     }
 
     // Sign in with github

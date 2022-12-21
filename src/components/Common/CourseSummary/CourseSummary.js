@@ -13,7 +13,8 @@ const CourseSummary = ({ course }) => {
     const { _id, thumbnail_url, title, advisor, details } = course;
     return (
 
-        <MDBCol sm='6'>
+        <MDBCol sm='6' data-aos="fade-up"
+            data-aos-duration="1000">
             <MDBCard className='border-0 shadow-sm'>
                 <MDBCardBody>
                     <MDBCardTitle className='fw-bold'>{title}</MDBCardTitle>

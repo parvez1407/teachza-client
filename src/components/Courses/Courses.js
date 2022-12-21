@@ -1,13 +1,8 @@
 import React from 'react';
 
 import {
-    MDBCard,
-    MDBCardBody,
-    MDBCardTitle,
-    MDBCardText,
     MDBRow,
-    MDBCol,
-    MDBBtn
+
 } from 'mdb-react-ui-kit';
 import { useLoaderData } from 'react-router-dom';
 import CourseSummary from '../Common/CourseSummary/CourseSummary';
